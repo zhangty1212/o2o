@@ -1,0 +1,176 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cn.zty</groupId>
+  <artifactId>o2o</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>o2o Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <dependencies> 
+  
+   <!--junit -->
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.12</version>
+	</dependency>
+
+    <!--引入 commons-logging 依赖包 -->
+	<dependency>
+		<groupId>commons-logging</groupId>
+		<artifactId>commons-logging</artifactId>
+		<version>1.2</version>
+	</dependency>
+	
+	<!--引入springmvc依赖包 -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>4.3.13.RELEASE</version>
+	</dependency>
+	
+	<!--引入spring 依赖包 -->
+
+	<!--由于在添加springmvc依赖包的时候,已经添加了许多spring相关包了，所以此时不需要再添加额外的包， 可以直接创建、配置 spring 
+		文件即可 -->
+		
+   <!-- 手动下载 spring-test包 ，因为添加springmvc依赖包的时候，没有自动下载；
+           我们做测试时，需要用到 spring-test 包 -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<version>4.3.13.RELEASE</version>
+		<scope>test</scope>
+	</dependency>
+
+	<!--配置spring声明式事务管理 -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+		<version>4.3.13.RELEASE</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>4.3.13.RELEASE</version>
+	</dependency>
+	
+	<!--引入 mybatis 依赖包 -->
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis</artifactId>
+		<version>3.2.8</version>
+	</dependency>
+	
+	<!--引入 mybatis-spring 整合依赖包 -->
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis-spring</artifactId>
+		<version>1.2.2</version>
+	</dependency>
+	
+	<!-- Mybatis分页插件，帮助简化分页查询代码书写 -->
+	<dependency>
+		<groupId>com.github.pagehelper</groupId>
+		<artifactId>pagehelper</artifactId>
+		<version>5.1.2</version>
+	</dependency>
+
+	<!-- 代理 -->
+	<dependency>
+		<groupId>cglib</groupId>
+		<artifactId>cglib</artifactId>
+		<version>2.2.2</version>
+	</dependency>
+
+	<!-- 数据库 -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>8.0.12</version>
+	</dependency> 
+	
+	  <!-- c3p0 数据库连接池 -->
+	<dependency>
+		<groupId>com.mchange</groupId>
+		<artifactId>c3p0</artifactId>
+		<version>0.9.2</version>
+	</dependency>
+
+	<!-- 日志文件管理包 -->
+	<!-- <dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.12</version>
+	</dependency> -->
+
+	<dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-classic</artifactId>
+		<version>1.2.3</version>
+	</dependency>
+	
+	<!-- JSTL标签类 -->
+	<dependency>
+		<groupId>jstl</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
+
+	<!-- Servlet web 使用 -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>4.0.1</version>
+	</dependency>
+
+	<!-- json 解析 -->
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>2.9.8</version>
+	</dependency>
+
+	<!-- Map 工具类 对标准 java Collection 的扩展 spring-core.jar 需要 commons-collections.jar  -->
+	<dependency>
+		<groupId>commons-collections</groupId>
+		<artifactId>commons-collections</artifactId>
+		<version>3.2.1</version>
+	</dependency>
+
+	<!-- Java使用google开源工具Thumbnailator实现图片压缩 -->
+	<dependency>
+		<groupId>net.coobird</groupId>
+		<artifactId>thumbnailator</artifactId>
+		<version>0.4.8</version>
+	</dependency>
+
+	<!-- kaptcha是一个简单好用的验证码生成工具，通过配置，可以自己定义验证码大小、颜色、显示的字符等等 -->
+	<dependency>
+		<groupId>com.github.penggle</groupId>
+		<artifactId>kaptcha</artifactId>
+		<version>2.3.2</version>
+	</dependency>
+  </dependencies>
+
+	<build>
+		<finalName>o2o</finalName>
+		<plugins>
+		    <!-- java编译插件， 编译Java代码 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>10</source>
+					<target>10</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+  </build>
+  
+</project>
