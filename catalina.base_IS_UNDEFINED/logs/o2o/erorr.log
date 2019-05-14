@@ -1,0 +1,4 @@
+2019-05-13 20:57:21.686 [main] ERROR cn.zty.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2019-05-13 21:02:50.324 [main] ERROR cn.zty.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2019-05-13 21:04:46.284 [main] ERROR cn.zty.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2019-05-13 21:12:53.017 [main] ERROR cn.zty.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
