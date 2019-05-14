@@ -8,6 +8,7 @@ package cn.zty.o2o.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -64,10 +65,10 @@ public class ImageUtil {
 	*/
 	
 	         
-	public static String generateThumbnail(File thumbnail,String targetAddr) {   // generateThumbnail(CommonsMultipartFile thumbnail,String targetAddr)
+	public static String generateThumbnail(InputStream thumbnailInputStream,String fileName,String targetAddr) {   // generateThumbnail(CommonsMultipartFile thumbnail,String targetAddr)
 		
 		String realFileName = getRandomFileName();
-		String extension=getFileExtension(thumbnail);
+		String extension=getFileExtension(fileName);
 		makeDirPath(targetAddr);
 		String relativeAddr= targetAddr + realFileName + extension;
 		logger.debug("current relativeAddr is: " + relativeAddr);
@@ -76,7 +77,7 @@ public class ImageUtil {
 		logger.debug("basePath: "+ basePath);
 		
 		try {
-			Thumbnails.of(thumbnail).size(300, 300)
+			Thumbnails.of(thumbnailInputStream).size(300, 300)
 			.watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(PathUtil.getImageBasePath() + "\\watermark.png")), 0.35f) //new File(basePath + "watermark.png" 为何报错？
 			.outputQuality(0.8f)
 			.toFile(dest);
@@ -113,15 +114,14 @@ public class ImageUtil {
 
 	/**
 	*  方法描述: 获取输入文件流（图片）的扩展名
-	*  @param thumbnail
+	*  @param fileName
 	*  @return
 	*  @since 2019年5月13日 
 	*/
-	private static String getFileExtension(File cFile) {
+	private static String getFileExtension(String fileName) {
 		// TODO Auto-generated method stub
 		
-		String originalFileName = cFile.getName();
-		return originalFileName.substring(originalFileName.lastIndexOf("."));
+		return fileName.substring(fileName.lastIndexOf("."));
 	}
 
 	/**
@@ -138,8 +138,6 @@ public class ImageUtil {
 		String nowTimeStr = simpleDateFormat.format(new Date());
 		return nowTimeStr+rannum;
 	}
-
-
 
 	public static void main(String[] args) throws IOException {
 		

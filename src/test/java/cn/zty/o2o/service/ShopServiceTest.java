@@ -9,6 +9,8 @@ package cn.zty.o2o.service;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Date;
 
 import org.junit.Test;
@@ -48,7 +50,7 @@ public class ShopServiceTest extends BaseTest{
 	    shop.setArea(area);
 	    shop.setOwner(owner);
 	    shop.setShopCategory(shopCategory);		
-	    shop.setShopName("小 one 之家 3");
+	    shop.setShopName("小 one 之家 4");
 	    shop.setShopAddr("深圳 南山 蛇口");
 	    shop.setShopDesc("ShopService 实现测试");
 	    shop.setPhone("13662247086");
@@ -57,10 +59,21 @@ public class ShopServiceTest extends BaseTest{
 	    shop.setEnableStatus(ShopStateEnum.CHECK.getState());
 	    shop.setAdvice("审核中");
 	    
-	    File shopImg = new File("C:/Users/25472/Desktop/o2o/image/paopao.png");
+/*	    File shopImg = new File("C:/Users/25472/Desktop/o2o/image/paopao.png");
+	    ShopExecution sExecution= shopService.addShop(shop, shopImg);  // addShop(Shop shop,InputStream shopImgInputStream,String fileName);
+	    assertEquals(ShopStateEnum.CHECK.getState(), sExecution.getState());*/
 	    
-	    ShopExecution sExecution= shopService.addShop(shop, shopImg);
-	    assertEquals(ShopStateEnum.CHECK.getState(), sExecution.getState());
-	    
+	    	String imgPath="C:/Users/25472/Desktop/o2o/image/paopao.png";
+	    	File file= new File(imgPath);
+	    	String fileName= file.getName();
+			FileInputStream shopImgInputStream = null;
+			try {
+				shopImgInputStream = new FileInputStream(imgPath);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			ShopExecution sExecution= shopService.addShop(shop, shopImgInputStream,fileName);  
+		    assertEquals(ShopStateEnum.CHECK.getState(), sExecution.getState());    
 	}
 }

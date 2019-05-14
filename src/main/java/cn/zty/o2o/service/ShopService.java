@@ -11,14 +11,14 @@ package cn.zty.o2o.service;
 *  @since 2019年5月13日 下午7:50:14
 */
 
-import java.io.File;
+import java.io.InputStream;
 
 import cn.zty.o2o.dto.ShopExecution;
 import cn.zty.o2o.entity.Shop;
 
 public interface ShopService {
 	
-	ShopExecution addShop(Shop shop,File shopImg);
+	ShopExecution addShop(Shop shop,InputStream shopImgInputStream,String fileName);
     
 	
 }
