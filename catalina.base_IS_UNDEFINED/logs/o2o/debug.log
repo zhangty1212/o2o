@@ -1,9 +1,54 @@
-2019-05-14 14:53:41.973 [main] DEBUG cn.zty.o2o.dao.ShopDao.insertShop - ==>  Preparing: insert into tb_shop(owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,phone,shop_img, priority,create_time,last_edit_time,enable_status,advice) values (?,?,?,?,?,?,?,?, ?,?,?,?,?) 
-2019-05-14 14:53:42.033 [main] DEBUG cn.zty.o2o.dao.ShopDao.insertShop - ==> Parameters: 9(Long), 1(Integer), 36(Long), 小 one 之家 4(String), ShopService 实现测试(String), 深圳 南山 蛇口(String), 13662247086(String), null, 1(Integer), 2019-05-14 14:53:41.657(Timestamp), 2019-05-14 14:53:41.657(Timestamp), 0(Integer), 审核中(String)
-2019-05-14 14:53:42.101 [main] DEBUG cn.zty.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2019-05-14 14:53:42.136 [main] DEBUG cn.zty.o2o.util.ImageUtil - current relativeAddr is: \upload\item\shop43\2019051414534288025.png
-2019-05-14 14:53:42.136 [main] DEBUG cn.zty.o2o.util.ImageUtil - current complete addr is: C:\Users\25472\Desktop\o2o\image\upload\item\shop43\2019051414534288025.png
-2019-05-14 14:53:42.136 [main] DEBUG cn.zty.o2o.util.ImageUtil - basePath: /D:/eclipse/workspace/o2o/target/test-classes/
-2019-05-14 14:53:42.590 [main] DEBUG cn.zty.o2o.dao.ShopDao.updateShop - ==>  Preparing: update tb_shop SET shop_name = ?, shop_desc = ?, shop_addr = ?, phone = ?, shop_img = ?, priority = ?, advice = ?, last_edit_time = ?, enable_status = ?, shop_category_id = ?, area_id = ? where shop_id = ? 
-2019-05-14 14:53:42.590 [main] DEBUG cn.zty.o2o.dao.ShopDao.updateShop - ==> Parameters: 小 one 之家 4(String), ShopService 实现测试(String), 深圳 南山 蛇口(String), 13662247086(String), \upload\item\shop43\2019051414534288025.png(String), 1(Integer), 审核中(String), 2019-05-14 14:53:41.657(Timestamp), 0(Integer), 36(Long), 1(Integer), 43(Long)
-2019-05-14 14:53:42.653 [main] DEBUG cn.zty.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2019-05-15 10:49:38.446 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority desc 
+2019-05-15 10:49:38.487 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 10:49:38.554 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2019-05-15 11:04:26.920 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority desc 
+2019-05-15 11:04:26.974 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 11:04:27.000 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2019-05-15 11:04:27.007 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id = ? order by priority desc 
+2019-05-15 11:04:27.008 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 36(Long)
+2019-05-15 11:04:27.089 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2019-05-15 11:05:26.538 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority desc 
+2019-05-15 11:05:26.593 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 11:05:26.626 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2019-05-15 11:05:26.634 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id = ? order by priority desc 
+2019-05-15 11:05:26.635 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 36(Long)
+2019-05-15 11:05:26.636 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2019-05-15 13:42:22.254 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority desc 
+2019-05-15 13:42:22.307 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 13:42:22.337 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2019-05-15 13:42:22.345 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id = ? order by priority desc 
+2019-05-15 13:42:22.346 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 36(Long)
+2019-05-15 13:42:22.347 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2019-05-15 13:43:38.918 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority desc 
+2019-05-15 13:43:38.967 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 13:43:38.992 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2019-05-15 13:57:29.607 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority desc 
+2019-05-15 13:57:29.656 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 13:57:29.684 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2019-05-15 13:57:46.381 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority desc 
+2019-05-15 13:57:46.433 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 13:57:46.458 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2019-05-15 14:03:40.467 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority desc 
+2019-05-15 14:03:40.524 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 14:03:40.557 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2019-05-15 14:48:11.268 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority desc 
+2019-05-15 14:48:11.303 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 14:48:11.331 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 3
+2019-05-15 14:48:11.338 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id = ? order by priority desc 
+2019-05-15 14:48:11.339 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 36(Long)
+2019-05-15 14:48:11.340 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2019-05-15 14:49:11.274 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2019-05-15 14:49:11.322 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 14:49:11.353 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2019-05-15 14:52:45.920 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2019-05-15 14:52:45.991 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 14:52:46.024 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2019-05-15 14:52:46.034 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null and parent_id = ? order by priority desc 
+2019-05-15 14:52:46.035 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 36(Long)
+2019-05-15 14:52:46.036 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2019-05-15 14:56:38.722 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2019-05-15 14:56:38.771 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 14:56:38.795 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2019-05-15 14:57:31.927 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2019-05-15 14:57:31.977 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2019-05-15 14:57:32.002 [main] DEBUG cn.zty.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
