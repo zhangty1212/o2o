@@ -9,6 +9,7 @@ package cn.zty.o2o.dao;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -91,6 +92,7 @@ public class ShopDaoTest extends BaseTest {
 	}
 	
 	@Test
+	@Ignore
 	public void queryByShopIdTest() {
 
 		long shopId = 36L;
@@ -101,4 +103,29 @@ public class ShopDaoTest extends BaseTest {
 		System.out.println(shop.getOwner().getName());
 	}
 	
+	
+	@Test
+	@Ignore
+	public void queryShopCountTest() {
+		
+		Shop shoCondition = new Shop();
+		PersonInfo owner = new PersonInfo();
+		owner.setUserId(10L);
+		shoCondition.setOwner(owner);
+		int con = shopDao.queryShopCount(shoCondition);
+		System.out.println("con: " + con);	
+	}
+	
+	@Test
+	public void queryShopListTest() {
+		
+		Shop shop = new Shop();
+		List<Shop> shopList;
+		shopList=shopDao.queryShopList(shop,0, 5);
+		System.out.println("shopList: " + shopList.size());
+		for (Shop shop2 : shopList) {
+			System.out.println(shop2);
+			System.out.println("\n");
+		}
+	}
 }

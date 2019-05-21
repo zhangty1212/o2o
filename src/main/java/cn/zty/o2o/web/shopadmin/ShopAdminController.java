@@ -26,4 +26,16 @@ public class ShopAdminController {
 		// <property name="suffix" value=".html"></property>
 		return "shop/shopoperation";
 	}
+	
+	@RequestMapping("/shoplist")
+	public String shopList() {
+		// 转发至店铺列表页面
+		return "shop/shoplist";
+	}
+	
+	@RequestMapping(value = "/shopmanagement")
+	public String shopManagement() {
+		// 转发至店铺管理页面
+		return "shop/shopmanagement";
+	}
 }

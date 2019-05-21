@@ -27,7 +27,7 @@ public interface ShopService {
 	*  @return
 	*  @since 2019年5月20日 
 	*/
-	ShopExecution addShop(Shop shop,InputStream shopImgInputStream,String fileName) throws ShopOperationException;
+	public ShopExecution addShop(Shop shop,InputStream shopImgInputStream,String fileName) throws ShopOperationException;
 	
 	/**
 	*    方法描述:  通过 shopId 查询店铺
@@ -35,7 +35,7 @@ public interface ShopService {
 	*  @return
 	*  @since 2019年5月20日 
 	*/
-	Shop getByShopId(long shopId);
+	public Shop getByShopId(long shopId);
 	
 	/**
 	*    方法描述: 更新店铺信息，包括对图片的处理
@@ -45,6 +45,18 @@ public interface ShopService {
 	*  @return
 	*  @since 2019年5月20日 
 	*/
-	ShopExecution modifyShop(Shop shop,InputStream shopImgInputStream,String fileName) throws ShopOperationException;
+	public ShopExecution modifyShop(Shop shop,InputStream shopImgInputStream,String fileName) throws ShopOperationException;
+	
+	
+	/**
+	*    方法描述:  根据 shopCondition 分页返回相应店铺列表
+	*  @param shopCondition
+	*  @param rowIndex
+	*  @param pageSize
+	*  @return
+	*  @since 2019年5月21日 
+	*/
+	public ShopExecution getShopList(Shop shopCondition,  int pageIndex, int pageSize);
+	
 	
 }
