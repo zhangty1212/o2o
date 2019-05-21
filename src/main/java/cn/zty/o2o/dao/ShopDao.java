@@ -34,5 +34,15 @@ public interface ShopDao {
 	
 	
 	
+	/**
+	*    方法描述:  通过 shopId 查询店铺
+	*  @param shopId
+	*  @return
+	*  @since 2019年5月20日 
+	*/
+	Shop queryByShopId(long shopId);
+	
+	
+	
 
 }

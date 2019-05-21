@@ -16,7 +16,7 @@ import cn.zty.o2o.entity.Area;
 import cn.zty.o2o.service.AreaService;
 
 /**
-*    类描述: 
+*  类描述: 
 *  @author 张涛一 ,2547260515@qq.com
 *  @since 2019年5月9日 下午7:30:30
 */

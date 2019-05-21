@@ -15,10 +15,36 @@ import java.io.InputStream;
 
 import cn.zty.o2o.dto.ShopExecution;
 import cn.zty.o2o.entity.Shop;
+import cn.zty.o2o.exceptions.ShopOperationException;
 
 public interface ShopService {
 	
-	ShopExecution addShop(Shop shop,InputStream shopImgInputStream,String fileName);
-    
+	/**
+	*    方法描述:  注册店铺信息，包括对图片的处理
+	*  @param shop
+	*  @param shopImgInputStream
+	*  @param fileName
+	*  @return
+	*  @since 2019年5月20日 
+	*/
+	ShopExecution addShop(Shop shop,InputStream shopImgInputStream,String fileName) throws ShopOperationException;
+	
+	/**
+	*    方法描述:  通过 shopId 查询店铺
+	*  @param shopId
+	*  @return
+	*  @since 2019年5月20日 
+	*/
+	Shop getByShopId(long shopId);
+	
+	/**
+	*    方法描述: 更新店铺信息，包括对图片的处理
+	*  @param shop
+	*  @param shopImgInputStream
+	*  @param fileName
+	*  @return
+	*  @since 2019年5月20日 
+	*/
+	ShopExecution modifyShop(Shop shop,InputStream shopImgInputStream,String fileName) throws ShopOperationException;
 	
 }

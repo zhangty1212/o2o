@@ -11,8 +11,10 @@ import static org.junit.Assert.assertEquals;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Date;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,6 +25,7 @@ import cn.zty.o2o.entity.PersonInfo;
 import cn.zty.o2o.entity.Shop;
 import cn.zty.o2o.entity.ShopCategory;
 import cn.zty.o2o.enums.ShopStateEnum;
+import cn.zty.o2o.exceptions.ShopOperationException;
 
 /**
 *  类描述: 
@@ -36,6 +39,7 @@ public class ShopServiceTest extends BaseTest{
 	ShopService shopService;
 	
 	@Test
+	@Ignore
 	public void addShopTest() throws FileNotFoundException {
 		
 		Shop shop= new Shop();
@@ -71,4 +75,21 @@ public class ShopServiceTest extends BaseTest{
 		ShopExecution sExecution = shopService.addShop(shop, shopImgInputStream, fileName);
 		assertEquals(ShopStateEnum.CHECK.getState(), sExecution.getState());
 	}
+	
+	@Test
+	public void modifyShopTest() throws ShopOperationException,FileNotFoundException{
+		
+		Shop shop= new Shop();
+		shop.setShopId(48L);
+		shop.setShopName("更新店铺名称- 711");	
+		
+		String imgPath = "C:/Users/25472/Desktop/o2o/image/dabai.png";
+		File shopImg = new File(imgPath);
+		String fileName = shopImg.getName();
+		InputStream inputStream=new FileInputStream(shopImg);
+		
+		ShopExecution shopExecution= shopService.modifyShop(shop, inputStream, fileName);
+		System.out.println("新的图片地址为：" + shopExecution.getShop().getShopImg());
+	}
+	
 }
